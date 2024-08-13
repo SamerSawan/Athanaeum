@@ -1,8 +1,9 @@
-import NavBar from "./components/navbar";
-import BookCard from "./components/bookCard";
-import ReadingGraph, { ReadingData } from "./components/readingGraph";
-import QuoteOfTheDay from "./components/quoteOfTheDay";
-import Stats from "./components/stats";
+import NavBar from "./components/DashboardRelated/navbar";
+import BookCard from "./components/DashboardRelated/bookCard";
+import ReadingGraph, { ReadingData } from "./components/DashboardRelated/readingGraph";
+import QuoteOfTheDay from "./components/DashboardRelated/quoteOfTheDay";
+import Stats from "./components/DashboardRelated/stats";
+import BookShelf from "./components/BookshelvesRelated/Bookshelf";
 
 
 const readingData: ReadingData = {
@@ -82,6 +83,7 @@ export default function Home() {
     <main className="min-h-screen flex-col items-center justify-between px-24 py-12">
       <NavBar/>
       <h1 className="font-bold text-4xl mt-16 ml-40">Welcome, Samer</h1>
+      {/*Dashboard*/}
       <div className="flex flex-col gap-10 justify-center w-full mt-16 items-center">
         <div className="flex justify-between w-1/2">
           <BookCard/>
@@ -91,6 +93,13 @@ export default function Home() {
           <QuoteOfTheDay></QuoteOfTheDay>
           <Stats></Stats>
         </div>
+      </div>
+      {/*Bookshelves*/}
+      <div className="flex flex-col items-center mt-36">
+        <h1 className="text-4xl font-bold">Your Bookshelves</h1>
+        <BookShelf></BookShelf>
+        <BookShelf></BookShelf>
+        <BookShelf></BookShelf>
       </div>
     </main>
   );

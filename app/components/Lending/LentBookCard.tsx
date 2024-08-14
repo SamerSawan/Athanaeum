@@ -2,40 +2,46 @@ interface LentBookCardProps {
     isEven: boolean;
     isTop?: boolean;
     isBot?: boolean;
+    src: string;
+    alt: string;
+    title: string;
+    author: string;
+    person: string;
+    lentDate: string;
+    dueDate: string;
+    dueStatus: string;
 }
 
-export default function LentBookCard({ isEven, isTop = false, isBot = false }: LentBookCardProps) {
+export default function LentBookCard({ isEven, isTop = false, isBot = false, src, alt, title, author, person, lentDate, dueDate, dueStatus }: LentBookCardProps) {
     return (
         <div className={`flex flex-row ${isEven ? 'bg-primary-300' : 'bg-primary-200'} w-1/2 justify-between px-8 py-2 items-center font-semibold ${isTop ? 'rounded-t' : ''} ${isBot ? 'rounded-b' : ''}`}>
-            {/* book cover */}
             <img
-                src="https://m.media-amazon.com/images/I/91p594CxSpL._AC_UF1000,1000_QL80_.jpg"
-                alt="Les Miserables"
-                className="w-32 h-52 mr-10 rounded-md"
+                src={src}
+                alt={alt}
+                className="w-32 h-52 rounded-md"
             />
 
-            {/* title and author */}
-            <div className="text-center">
-                <p>Les Miserables</p>
-                <p>Victor Hugo</p>
+            <div className="text-center w-48">
+                <p>{title}</p>
+                <p>{author}</p>
             </div>
-            {/* person */}
-            <div>
-                <p>Joanna</p>
+
+            <div className="w-20">
+                <p>{person}</p>
             </div>
-            {/* Lend Date */}
+
             <div className="text-center">
                 <p>Lent on</p>
-                <p>2024-08-01</p>
+                <p>{lentDate}</p>
             </div>
-            {/* Due Date */}
+
             <div className="text-center">
                 <p>Due on</p>
-                <p>2024-08-11</p>
+                <p>{dueDate}</p>
             </div>
-            {/* Due Status */}
+
             <div>
-                <p className="text-red-700">Due</p>
+                <p className={`${dueStatus === "Due" ? 'text-red-800' : dueStatus === "On Loan" ? 'text-green-600' : 'text-yellow-600'}`}>{dueStatus}</p>
             </div>
         </div>
     );

@@ -4,8 +4,8 @@ import ReadingGraph, { ReadingData } from "./components/DashboardRelated/reading
 import QuoteOfTheDay from "./components/DashboardRelated/quoteOfTheDay";
 import Stats from "./components/DashboardRelated/stats";
 import BookShelf from "./components/BookshelvesRelated/Bookshelf";
-import LentBookCard from "./components/Lending/LentBookCard";
 import LendSection from "./components/Lending/LendSection";
+import { bookshelves } from "./constants";
 
 
 const readingData: ReadingData = {
@@ -99,9 +99,9 @@ export default function Home() {
       {/*Bookshelves*/}
       <div className="flex flex-col items-center mt-36">
         <h1 className="text-4xl font-bold">Your Bookshelves</h1>
-        <BookShelf></BookShelf>
-        <BookShelf></BookShelf>
-        <BookShelf></BookShelf>
+        {bookshelves.map((shelf, index) => (
+        <BookShelf key={index} bookshelf={shelf} />
+      ))}
       </div>
       {/*Lent Out Books*/}
       <div className="flex flex-col items-center mt-36">

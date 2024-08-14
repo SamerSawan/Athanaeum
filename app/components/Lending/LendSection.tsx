@@ -1,11 +1,25 @@
 import LentBookCard from "./LentBookCard";
+import { lentBooks } from "@/app/constants";
 
 export default function LendSection() {
     return (
         <div className="flex flex-col items-center w-full mt-10">
-            <LentBookCard isEven={true} isTop={true}></LentBookCard>
-            <LentBookCard isEven={false}></LentBookCard>
-            <LentBookCard isEven={true} isBot={true}></LentBookCard>
+            {lentBooks.map((book, index) => (
+                <LentBookCard
+                    key={index}
+                    isEven={index % 2 === 0}
+                    isTop={index === 0}
+                    isBot={index === lentBooks.length - 1}
+                    src={book.src}
+                    alt={book.alt}
+                    title={book.title}
+                    author={book.author}
+                    person={book.person}
+                    lentDate={book.lentDate}
+                    dueDate={book.dueDate}
+                    dueStatus={book.dueStatus}
+                />
+            ))}
         </div>
-    )
+    );
 }

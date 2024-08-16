@@ -1,6 +1,18 @@
+"use client";
+import React, { useState } from 'react';
+import UpdateProgressModal from './UpdateProgressModal'; // Import the modal component
+
 export default function BookCard() {
-    return (
-      <div className="flex items-center bg-primary-50 px-6 rounded-lg shadow-lg w-[551px] h-full self-center">
+  // State to control modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to toggle modal visibility
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  return (
+    <div className="flex items-center bg-primary-50 px-6 rounded-lg shadow-lg w-[551px] h-full self-center">
       {/* Book Image */}
       <img
         src="https://m.media-amazon.com/images/I/91p594CxSpL._AC_UF1000,1000_QL80_.jpg"
@@ -30,10 +42,13 @@ export default function BookCard() {
         </div>
 
         {/* Update Progress Button */}
-        <button className="bg-secondary-200 text-white py-2 px-4 rounded-md text-sm hover:bg-secondary-100 transition">
+        <button onClick={toggleModal} className="bg-secondary-200 text-white py-2 px-4 rounded-md text-sm hover:bg-secondary-100 transition">
           Update Progress
         </button>
       </div>
+
+      {/* Modal */}
+      <UpdateProgressModal isOpen={isModalOpen} onClose={toggleModal} />
     </div>
-    )
+  );
 }

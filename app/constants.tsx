@@ -1,11 +1,19 @@
 interface Book {
-    src: string;
-    alt: string;
-  }
+  src: string;
+  alt: string;
+}
+
+export interface searchBook {
+  src: string;
+  alt: string;
+  title: string;
+  author: string;
+  description: string;
+}
   
 export interface Bookshelf {
-    title: string;
-    books: Book[];
+  title: string;
+  books: Book[];
 }
   
   export const bookshelves: Bookshelf[] = [
@@ -46,7 +54,7 @@ export interface Bookshelf {
     }
   ];
   
-  // constants.tsx
+
 
 export interface LentBook {
     src: string;
@@ -59,7 +67,7 @@ export interface LentBook {
     dueStatus: string;
   }
   
-  export const lentBooks: LentBook[] = [
+export const lentBooks: LentBook[] = [
     { 
         src: "https://m.media-amazon.com/images/I/71aG0m9XRcL._AC_UF1000,1000_QL80_.jpg", 
         alt: "The Psychology of Money", title: "The Psychology of Money", 
@@ -137,5 +145,29 @@ export interface LentBook {
         dueDate: "2024-08-17", 
         dueStatus: "Almost Due" 
     }
-  ];
+];
+
+export const searchDemo: searchBook[] = [
+  {
+    src: "https://m.media-amazon.com/images/I/71mbJoazlCL._AC_UF1000,1000_QL80_.jpg",
+    alt: "Don Quixote",
+    title: "Don Quixote",
+    author: "Miguel De Cervantes",
+    description: "Don Quixote, originally published in two parts in 1605 and 1615, stands as Cervantes' belated but colossal literary success. A work which has achieved mythic status, it is considered to have pioneered the modern novel. Don Quixote, a poor gentleman from La Mancha, Spain, entranced by the code of chivalry, seeks romantic honor through absurd and fantastic adventures. His fevered imagination turns everyday objects into heroic opponents and stepping stones to greater glory; each exploit serves as a comic, yet disturbing commentary on the psychological struggle between reality and illusion, fact and fiction. This celebrated translation by Charles Jarvis offers a new introduction and notes which provide essential background information."
+  },
+  {
+    src: "https://m.media-amazon.com/images/I/91es8r849YL._AC_UF1000,1000_QL80_.jpg",
+    alt: "The Three Muskateers",
+    title: "The Three Muskateers",
+    author: "Alexandre Dumas",
+    description: "One of the preeminent novels by French writer Alexandre Dumas, this swashbuckling tale follows a group of honorable 17th-century swordsmen who must contend with powerful adversaries scheming against the queen. Determined to join the royal guard, young d'Artagnan leaves his country home and travels to Paris, where he unintentionally angers Aramis, Athos, and Porthos, the esteemed Three Musketeers. Eventually winning the trust and admiration of the formidable trio of fighters, d'Artagnan joins them in their quest to thwart the plans of the sinister Cardinal Richelieu."
+  },
+  {
+    src: "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781643132020/twenty-years-after-9781643132020_hr.jpg",
+    alt: "Twenty Years After",
+    title: "Twenty Years After",
+    author: "Alexandre Dumas",
+    description: "Twenty Years After (1845), the sequel to The Three Musketeers, is a supreme creation of suspense and heroic adventure. Two decades have passed since the musketeers triumphed over Cardinal Richelieu and Milady. Time has weakened their resolve, and dispersed their loyalties. But treasons and strategems still cry out for justice: civil war endangers the throne of France, while in England Cromwell threatens to send Charles I to the scaffold. Dumas brings his immortal quartet out of retirement to cross swords with time, the malevolence of men, and the forces of history. But their greatest test is a titanic struggle with the son of Milady, who wears the face of Evil. In his Introduction to this edition David Coward sets both the author and his exciting tale in their historical and cultural contexts. - ;Twenty Years After (1845), the sequel to The Three Musketeers, is a supreme creation of suspense and heroic adventure. Two decades have passed since the musketeers triumphed over Cardinal Richelieu and Milady. Time has weakened their resolve, and dispersed their loyalties. But treasons and strategems still cry out for justice: civil war endangers the throne of France, while in England Cromwell threatens to send Charles I to the scaffold. Dumas brings his immortal quartet out of retirement to cross swords with time, the malevolence of men, and the forces of history. But their greatest test is a titanic struggle with the son of Milady, who wears the face of Evil. In his Introduction to this edition David Coward sets both the author and his exciting tale in their historical and cultural contexts. -"
+  }
+]
   

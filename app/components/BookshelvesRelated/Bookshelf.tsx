@@ -29,9 +29,9 @@ export default function BookShelf({ bookshelf }: BookShelfProps) {
               className="w-32 h-52 mr-10 rounded-md"
             />
           ))}
-          <div className='flex min-w-32 min-h-52 border-4 border-primary-300 rounded-md justify-center items-center'>
+          <button className='flex min-w-32 min-h-52 border-4 border-primary-300 rounded-md justify-center items-center'>
             <FontAwesomeIcon icon={faPlus} className='w-14 h-14 text-primary-300' />
-          </div>
+          </button>
         </div>
       </div>
     </div>

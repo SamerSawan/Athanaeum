@@ -1,4 +1,4 @@
-import NavBar from "./components/DashboardRelated/navbar";
+import NavBar from "./components/navbar";
 import BookCard from "./components/DashboardRelated/bookCard";
 import ReadingGraph, { ReadingData } from "./components/DashboardRelated/readingGraph";
 import QuoteOfTheDay from "./components/DashboardRelated/quoteOfTheDay";
